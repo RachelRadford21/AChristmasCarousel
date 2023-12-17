@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct AChristmasCarouselApp: App {
+    @StateObject var vm = ViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(vm)
         }
     }
 }

@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var vm:ViewModel
+    @State private var isActive = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.xmasGreen.ignoresSafeArea()
+            if self.isActive {
+                ChristmasImageView(vm: vm)
+            } else {
+                VStack {
+                    Image("Christmas Carousel")
+                        .resizable()
+                        .scaledToFit()
+                }
+            }
+        }.onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
         }
-        .padding()
     }
 }
 
