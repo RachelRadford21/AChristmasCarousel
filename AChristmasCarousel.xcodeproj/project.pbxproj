@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB45FB702B2F4F1D006C3EA7 /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45FB6F2B2F4F1D006C3EA7 /* ResultsModel.swift */; };
+		AB45FB722B2F4F33006C3EA7 /* URLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45FB712B2F4F33006C3EA7 /* URLModel.swift */; };
 		AB708A802B2E563C00F48AF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB708A7F2B2E563C00F48AF6 /* Extensions.swift */; };
 		AB708A822B2E59AE00F48AF6 /* ChristmasImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB708A812B2E59AE00F48AF6 /* ChristmasImageView.swift */; };
 		AB9913602B2E3F2100B8D766 /* AChristmasCarouselApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB99135F2B2E3F2100B8D766 /* AChristmasCarouselApp.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB45FB6F2B2F4F1D006C3EA7 /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
+		AB45FB712B2F4F33006C3EA7 /* URLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLModel.swift; sourceTree = "<group>"; };
 		AB708A7F2B2E563C00F48AF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AB708A812B2E59AE00F48AF6 /* ChristmasImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasImageView.swift; sourceTree = "<group>"; };
 		AB99135C2B2E3F2100B8D766 /* AChristmasCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AChristmasCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +102,9 @@
 		AB9913702B2E42FC00B8D766 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB45FB6F2B2F4F1D006C3EA7 /* ResultsModel.swift */,
 				AB9913742B2E437800B8D766 /* ImageModel.swift */,
+				AB45FB712B2F4F33006C3EA7 /* URLModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 				AB9913732B2E434E00B8D766 /* ViewModel.swift in Sources */,
 				AB9913602B2E3F2100B8D766 /* AChristmasCarouselApp.swift in Sources */,
 				AB9913752B2E437800B8D766 /* ImageModel.swift in Sources */,
+				AB45FB722B2F4F33006C3EA7 /* URLModel.swift in Sources */,
+				AB45FB702B2F4F1D006C3EA7 /* ResultsModel.swift in Sources */,
 				AB708A822B2E59AE00F48AF6 /* ChristmasImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
