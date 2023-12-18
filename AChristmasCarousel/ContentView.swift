@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var vm:ViewModel
+    @EnvironmentObject var vm: GlobalViewModel
     @State private var isActive = false
+    @AppStorage("isDarkMode") private var isDarkMode = false
     var body: some View {
         ZStack {
+            isDarkMode ?
+            Color.xmasRed.ignoresSafeArea() :
             Color.xmasGreen.ignoresSafeArea()
-            if self.isActive {
-                ChristmasImageView(vm: vm)
-            } else {
-                VStack {
-                    Image("Christmas Carousel")
-                        .resizable()
-                        .scaledToFit()
+            VStack {
+                if self.isActive {
+                    ChristmasImageView(vm: vm)
+                } else {
+                    VStack {
+                        Image("Christmas Carousel")
+                            .resizable()
+                            .scaledToFit()
+                    }
                 }
             }
         }.onAppear {
@@ -34,4 +39,7 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(GlobalViewModel())
+        
 }
+
