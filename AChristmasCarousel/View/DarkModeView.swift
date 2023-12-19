@@ -13,7 +13,6 @@ struct DarkModeView: View {
         VStack(alignment: .leading) {
             Toggle("", isOn: $isDarkMode)
         }
-        
     }
 }
 

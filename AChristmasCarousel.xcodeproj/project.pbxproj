@@ -18,6 +18,7 @@
 		AB9913672B2E3F2200B8D766 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB9913662B2E3F2200B8D766 /* Preview Assets.xcassets */; };
 		AB9913732B2E434E00B8D766 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9913722B2E434E00B8D766 /* ViewModel.swift */; };
 		AB9913752B2E437800B8D766 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9913742B2E437800B8D766 /* ImageModel.swift */; };
+		ABBCBF172B3118360059E34D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBCBF162B3118360059E34D /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AB9913662B2E3F2200B8D766 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB9913722B2E434E00B8D766 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AB9913742B2E437800B8D766 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		ABBCBF162B3118360059E34D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				AB45FB6F2B2F4F1D006C3EA7 /* ResultsModel.swift */,
 				AB9913742B2E437800B8D766 /* ImageModel.swift */,
 				AB45FB712B2F4F33006C3EA7 /* URLModel.swift */,
+				ABBCBF162B3118360059E34D /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				AB9913752B2E437800B8D766 /* ImageModel.swift in Sources */,
 				AB45FB722B2F4F33006C3EA7 /* URLModel.swift in Sources */,
 				AB45FB702B2F4F1D006C3EA7 /* ResultsModel.swift in Sources */,
+				ABBCBF172B3118360059E34D /* UserModel.swift in Sources */,
 				AB708A822B2E59AE00F48AF6 /* ChristmasImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

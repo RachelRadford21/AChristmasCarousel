@@ -8,26 +8,23 @@
 import Foundation
 import SwiftData
 
-//struct Results: Codable {
-//    var total: Int
-//    let results: [Images]
-//}
-
 @Model
 class Results: Codable {
     var total: Int?
+    var imageDescription: String?
     let results: [Images]
-    
-enum CodingKeys: String, CodingKey {
-    case total, results
-}
+    enum CodingKeys: String, CodingKey {
+        case imageDescription, results, total
+    }
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.total = try container.decode(Int.self, forKey: .total)
+        self.total = try? container.decode(Int.self, forKey: .total)
+        self.imageDescription = try? container.decode(String.self, forKey: .imageDescription)
         self.results = try container.decode([Images].self, forKey: .results)
     }
-    init(total: Int, results: [Images]) {
+    init(total: Int,imageDescription: String, results: [Images]) {
         self.total = total
+        self.imageDescription = imageDescription
         self.results = results
     }
     

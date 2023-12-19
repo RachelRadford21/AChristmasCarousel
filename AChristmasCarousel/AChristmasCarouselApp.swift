@@ -16,6 +16,7 @@ struct AChristmasCarouselApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(vm)
-        }.modelContainer(for: Results.self)
+        }
+        .modelContainer(for: Results.self)
     }
 }
