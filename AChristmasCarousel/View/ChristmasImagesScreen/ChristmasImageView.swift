@@ -9,35 +9,39 @@ import SwiftUI
 import SwiftData
 
 struct ChristmasImageView: View {
-    @ObservedObject var vm: GlobalViewModel
     @Query var images: [Images] = []
-    let layout = [GridItem(.fixed(100)),
-                  GridItem(.fixed(100)),
-                  GridItem(.fixed(100)),
-                  GridItem(.fixed(100)),
-                  GridItem(.fixed(100)),
-                  GridItem(.fixed(100)),
-                  GridItem(.fixed(100)),
-                  GridItem(.fixed(100)),
-                  GridItem(.fixed(100)),
-                  GridItem(.fixed(100))
-    ]
+    @AppStorage("isDarkMode") private var isDarkMode = false
     var body: some View {
         DarkModeView()
-        Spacer()
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyVGrid(columns: layout) {
-                ForEach(images, id: \.hashValue) { image in
-                    AsyncImage(url: URL(string: image.urls.regular)) { urlImage in
-                        urlImage
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 100, height: 100)
-                    } placeholder: {
-                        ProgressView()
-                    }
+        
+        
+        TabView {
+            
+            ForEach(images, id: \.self) { image in
+                
+                AsyncImage(url: URL(string: image.urls.regular)) { urlImage in
+                   RoundedRectangle(cornerRadius: 20)
+                        .foregroundStyle(isDarkMode ? Color.xmasGreen : Color.xmasRed)
+                        .frame(width: 250, height: 250)
+                        .overlay {
+                    urlImage
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 250, height: 250)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        
+                           
+                        }
+                    
+                    
+                } placeholder: {
+                    ProgressView(String("🎄"))
                 }
             }
-        }.padding(.top, 100)
+            
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        
+        
     }
 }

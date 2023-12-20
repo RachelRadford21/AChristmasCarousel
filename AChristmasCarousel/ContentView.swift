@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @EnvironmentObject var vm: GlobalViewModel
     @State private var isActive = false
     @AppStorage("isDarkMode") private var isDarkMode = false
     @Query var images: [Images] = []
@@ -22,7 +21,7 @@ struct ContentView: View {
             Color.xmasGreen.ignoresSafeArea()
             VStack {
                 if self.isActive {
-                    ChristmasImageView(vm: vm)
+                    ChristmasImageView()
                 } else {
                     VStack {
                         Image("Christmas Carousel")
@@ -38,7 +37,7 @@ struct ContentView: View {
                 }
             }
             Task {
-                if images.isEmpty || results.isEmpty || modelContext.hasChanges {
+                if results.isEmpty || modelContext.hasChanges {
                     await fetchImages()
                 }
             }
@@ -48,7 +47,7 @@ struct ContentView: View {
 
 extension ContentView {
     func fetchImages() async {
-        guard let url = URL(string: "https://api.unsplash.com/search/photos?query=christmas") else { return }
+        guard let url = URL(string: "https://api.unsplash.com/search/photos?query=christmasbackground") else { return }
         let token = "YOUR-API-KEY-HERE"
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -60,9 +59,6 @@ extension ContentView {
                 let response = try JSONDecoder().decode(Results.self, from: data)
                 DispatchQueue.main.async {
                     modelContext.insert(response)
-                    vm.results = response
-                    vm.images = response.results
-                    print("Results: \(String(describing: self.images))")
                 }
             } catch {
                 print("Error: \(error)")
@@ -72,9 +68,7 @@ extension ContentView {
     }
 }
 
-#Preview {
-    ContentView()
-        .environmentObject(GlobalViewModel())
-    
-}
+//#Preview {
+//    ContentView()
+//}
 

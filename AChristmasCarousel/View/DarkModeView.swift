@@ -10,8 +10,9 @@ import SwiftUI
 struct DarkModeView: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack {
             Toggle("", isOn: $isDarkMode)
+                .padding(.horizontal, 50)
         }
     }
 }
