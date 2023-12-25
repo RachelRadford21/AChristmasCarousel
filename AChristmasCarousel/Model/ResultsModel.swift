@@ -13,6 +13,7 @@ class Results: Codable {
     var total: Int?
     var imageDescription: String?
     let results: [Images]
+
     enum CodingKeys: String, CodingKey {
         case imageDescription, results, total
     }
@@ -21,6 +22,7 @@ class Results: Codable {
         self.total = try? container.decode(Int.self, forKey: .total)
         self.imageDescription = try? container.decode(String.self, forKey: .imageDescription)
         self.results = try container.decode([Images].self, forKey: .results)
+       
     }
     init(total: Int,imageDescription: String, results: [Images]) {
         self.total = total

@@ -11,7 +11,6 @@ import SwiftData
 struct ContentView: View {
     @State private var isActive = false
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @Query var images: [Images] = []
     @Query var results: [Results] = []
     @Environment(\.modelContext) private var modelContext
     var body: some View {
@@ -36,10 +35,9 @@ struct ContentView: View {
                     self.isActive = true
                 }
             }
-            Task {
-                if results.isEmpty || modelContext.hasChanges {
-                    await fetchImages()
-                }
+        }.task {
+            if results.isEmpty || modelContext.hasChanges {
+                await fetchImages()
             }
         }
     }
@@ -47,7 +45,7 @@ struct ContentView: View {
 
 extension ContentView {
     func fetchImages() async {
-        guard let url = URL(string: "https://api.unsplash.com/search/photos?query=christmasbackground") else { return }
+        guard let url = URL(string: "https://api.unsplash.com/search/photos?per_page=30&query=christmas") else { return }
         let token = "YOUR-API-KEY-HERE"
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -58,7 +56,7 @@ extension ContentView {
             do {
                 let response = try JSONDecoder().decode(Results.self, from: data)
                 DispatchQueue.main.async {
-                    modelContext.insert(response)
+                        modelContext.insert(response)
                 }
             } catch {
                 print("Error: \(error)")
@@ -68,6 +66,7 @@ extension ContentView {
     }
 }
 
+//
 //#Preview {
 //    ContentView()
 //}

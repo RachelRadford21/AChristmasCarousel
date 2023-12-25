@@ -9,8 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct ChristmasImageView: View {
-    @Query var images: [Images] = []
+    @Environment(\.modelContext) var modelContext
+    @Query var images: [Images]
     @AppStorage("isDarkMode") private var isDarkMode = false
+    @State private var isDownloaded = false
     var body: some View {
         VStack {
             DarkModeView()
@@ -23,6 +25,16 @@ struct ChristmasImageView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .scaleEffect(CGSize(width: 1.0, height: 1.0))
                             .padding(.horizontal, 5)
+                            .onTapGesture {
+                                let renderer = ImageRenderer(content: urlImage)
+                                
+                                if let image = renderer.uiImage {
+                                    isDownloaded = true
+                                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                                }
+                            }.alert(isPresented: $isDownloaded) {
+                                Alert(title: Text("Your image has beeen downloaded!"), message: Text(""), dismissButton: .default(Text("Got it!")))
+                            }
                     } placeholder: {
                         ProgressView(String("🎄"))
                     }
@@ -32,3 +44,4 @@ struct ChristmasImageView: View {
         }
     }
 }
+
