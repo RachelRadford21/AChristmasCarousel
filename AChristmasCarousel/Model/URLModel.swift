@@ -34,7 +34,5 @@ class URLs: Codable {
         self.regular = regular
         self.small = small
     }
-    func encode(to encoder: Encoder) throws {
-        // Toddo: handle encoding here if you need to
-    }
+    func encode(to encoder: Encoder) throws {}
 }

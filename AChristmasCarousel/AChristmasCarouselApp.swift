@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct AChristmasCarouselApp: App {
+    let container = try! ModelContainer(for: Results.self)
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

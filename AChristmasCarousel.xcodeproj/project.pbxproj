@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB22AA812D0F22B500E93CE3 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22AA802D0F22B500E93CE3 /* RemoteImageView.swift */; };
 		AB45FB702B2F4F1D006C3EA7 /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45FB6F2B2F4F1D006C3EA7 /* ResultsModel.swift */; };
 		AB45FB722B2F4F33006C3EA7 /* URLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45FB712B2F4F33006C3EA7 /* URLModel.swift */; };
 		AB45FB742B2F55D7006C3EA7 /* DarkModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB45FB732B2F55D7006C3EA7 /* DarkModeView.swift */; };
+		AB4B394C2D0DFF1800F8A601 /* LocalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4B394B2D0DFF1800F8A601 /* LocalImageView.swift */; };
+		AB56842B2D0E1A220052DC7B /* XmasImages in Resources */ = {isa = PBXBuildFile; fileRef = AB56842A2D0E19650052DC7B /* XmasImages */; };
 		AB708A802B2E563C00F48AF6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB708A7F2B2E563C00F48AF6 /* Extensions.swift */; };
 		AB708A822B2E59AE00F48AF6 /* ChristmasImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB708A812B2E59AE00F48AF6 /* ChristmasImageView.swift */; };
 		AB9913602B2E3F2100B8D766 /* AChristmasCarouselApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB99135F2B2E3F2100B8D766 /* AChristmasCarouselApp.swift */; };
@@ -20,9 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB22AA802D0F22B500E93CE3 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		AB45FB6F2B2F4F1D006C3EA7 /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 		AB45FB712B2F4F33006C3EA7 /* URLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLModel.swift; sourceTree = "<group>"; };
 		AB45FB732B2F55D7006C3EA7 /* DarkModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeView.swift; sourceTree = "<group>"; };
+		AB4B394B2D0DFF1800F8A601 /* LocalImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImageView.swift; sourceTree = "<group>"; };
+		AB56842A2D0E19650052DC7B /* XmasImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = XmasImages; sourceTree = "<group>"; };
 		AB708A7F2B2E563C00F48AF6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AB708A812B2E59AE00F48AF6 /* ChristmasImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasImageView.swift; sourceTree = "<group>"; };
 		AB99135C2B2E3F2100B8D766 /* AChristmasCarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AChristmasCarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +38,10 @@
 		AB9913662B2E3F2200B8D766 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB9913742B2E437800B8D766 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AB22AA7D2D0F1B7000E93CE3 /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AB9913592B2E3F2100B8D766 /* Frameworks */ = {
@@ -75,7 +85,9 @@
 				AB9913612B2E3F2100B8D766 /* ContentView.swift */,
 				AB9913702B2E42FC00B8D766 /* Model */,
 				AB99136D2B2E42E300B8D766 /* View */,
+				AB22AA7D2D0F1B7000E93CE3 /* ViewModel */,
 				AB708A7E2B2E562B00F48AF6 /* Helper Files */,
+				AB56842A2D0E19650052DC7B /* XmasImages */,
 				AB9913632B2E3F2200B8D766 /* Assets.xcassets */,
 				AB9913652B2E3F2200B8D766 /* Preview Content */,
 			);
@@ -113,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				AB708A812B2E59AE00F48AF6 /* ChristmasImageView.swift */,
+				AB4B394B2D0DFF1800F8A601 /* LocalImageView.swift */,
+				AB22AA802D0F22B500E93CE3 /* RemoteImageView.swift */,
 			);
 			path = ChristmasImagesScreen;
 			sourceTree = "<group>";
@@ -131,6 +145,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AB22AA7D2D0F1B7000E93CE3 /* ViewModel */,
 			);
 			name = AChristmasCarousel;
 			productName = AChristmasCarousel;
@@ -175,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB56842B2D0E1A220052DC7B /* XmasImages in Resources */,
 				AB9913672B2E3F2200B8D766 /* Preview Assets.xcassets in Resources */,
 				AB9913642B2E3F2200B8D766 /* Assets.xcassets in Resources */,
 			);
@@ -192,9 +210,11 @@
 				AB45FB742B2F55D7006C3EA7 /* DarkModeView.swift in Sources */,
 				AB9913602B2E3F2100B8D766 /* AChristmasCarouselApp.swift in Sources */,
 				AB9913752B2E437800B8D766 /* ImageModel.swift in Sources */,
+				AB22AA812D0F22B500E93CE3 /* RemoteImageView.swift in Sources */,
 				AB45FB722B2F4F33006C3EA7 /* URLModel.swift in Sources */,
 				AB45FB702B2F4F1D006C3EA7 /* ResultsModel.swift in Sources */,
 				AB708A822B2E59AE00F48AF6 /* ChristmasImageView.swift in Sources */,
+				AB4B394C2D0DFF1800F8A601 /* LocalImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

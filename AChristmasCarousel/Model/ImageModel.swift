@@ -25,9 +25,7 @@ class Images: Codable {
         self.id = id
         self.urls = urls
     }
-    func encode(to encoder: Encoder) throws {
-        // Toddo: handle encoding here if you need to
-    }
+    func encode(to encoder: Encoder) throws {}
 }
 
 

@@ -30,7 +30,5 @@ class Results: Codable {
         self.results = results
     }
     
-    func encode(to encoder: Encoder) throws {
-        // Toddo: handle encoding here if you need to
-    }
+    func encode(to encoder: Encoder) throws {}
 }

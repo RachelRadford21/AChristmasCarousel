@@ -9,10 +9,11 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @State private var isActive = false
     @AppStorage("isDarkMode") private var isDarkMode = false
+    @Environment(\.modelContext) private var context
+    @State private var isActive = false
     @Query var results: [Results] = []
-    @Environment(\.modelContext) private var modelContext
+    var imageVM: ImageViewModel = ImageViewModel()
     var body: some View {
         ZStack {
             isDarkMode ?
@@ -36,38 +37,11 @@ struct ContentView: View {
                 }
             }
         }.task {
-            if results.isEmpty || modelContext.hasChanges {
-                await fetchImages()
+            if results.isEmpty || context.hasChanges {
+           await imageVM.fetchImages()
+               
             }
         }
     }
 }
-
-extension ContentView {
-    func fetchImages() async {
-        guard let url = URL(string: "https://api.unsplash.com/search/photos?per_page=30&query=christmas") else { return }
-        let token = "YOUR-API-KEY-HERE"
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("Client-ID \(token)", forHTTPHeaderField: "Authorization")
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else { return }
-            do {
-                let response = try JSONDecoder().decode(Results.self, from: data)
-                DispatchQueue.main.async {
-                        modelContext.insert(response)
-                }
-            } catch {
-                print("Error: \(error)")
-            }
-        }
-        task.resume()
-    }
-}
-
-//
-//#Preview {
-//    ContentView()
-//}
 
