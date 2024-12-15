@@ -25,13 +25,12 @@ struct LocalImageView: View {
                                     .scaledToFit()
                                     .frame(width: 350, height: 350)
                                     .cornerRadius(10)
-                                    .aspectRatio(contentMode: .fill)
                                     .scrollTransition(.interactive(timingCurve: .circularEaseInOut), axis: .vertical) { content, phase in
                                         content
-                                            .offset(y: phase.value * -200)
-                                            .opacity(phase.isIdentity ? 1.0 : 0.4)
+                                            .offset(y: phase.value * -250)
+                                            .scaleEffect(phase.isIdentity ? 1 : 0.55)
                                     }
-                                    .animation(.smooth, value: localImages)
+                                    .animation(Animation.spring(response: 1.0, dampingFraction: 0.0, blendDuration: 1.0), value: localImages)
                                     .onTapGesture {
                                         let renderer = ImageRenderer(content: Image(uiImage: uiImage))
                                         
@@ -47,8 +46,7 @@ struct LocalImageView: View {
                         }
                         .scrollTransition(.interactive(timingCurve: .circularEaseInOut), axis: .vertical) { content, phase in
                             content
-                                .scaleEffect(phase.isIdentity ? 1 : 0.6)
-                                .opacity(phase.isIdentity ? 1.0 : 0.4)
+                               .opacity(phase.isIdentity ? 1.0 : 0.8)
                         }
                     }
                 }
